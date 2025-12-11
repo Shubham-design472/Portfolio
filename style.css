@@ -1,0 +1,587 @@
+/*body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px gray;
+}
+
+img {
+    width: 150px;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+ul {
+    text-align: left;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #4b7bec;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+*/
+
+
+/*
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background: #4b7bec;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: white;
+}
+
+.highlight {
+    color: #4b7bec;
+}
+
+.section {
+    padding: 40px 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.projects-container {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px gray;
+    width: 45%;
+}
+
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #4b7bec;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+*/
+
+
+
+/* Reset and Base Styles */
+html {
+    scroll-behavior: smooth; /* This enables the smooth scroll effect globally */
+}
+
+/* ... existing body styles ... */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000; /* Pure black for Matrix effect */
+    color: #e2e8f0;
+}
+
+#matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind your content */
+}
+
+/* Background Canvas positioning */
+#canvas-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Puts it behind everything */
+}
+
+/* Glassmorphism Utility Class */
+.glass-card, .glass-nav {
+    background: rgba(30, 41, 59, 0.7); /* Semi-transparent dark */
+    backdrop-filter: blur(10px); /* The blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
+
+/* Header & Nav */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    z-index: 1000;
+}
+
+.glass-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 50px; /* Pill shape */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #38bdf8; /* Neon Sky Blue */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.cta-btn {
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.cta-btn:hover {
+    background: #fff;
+}
+
+/* Layout */
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: #38bdf8;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #94a3b8;
+}
+
+.hero button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background: transparent;
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+}
+
+/* Section Common */
+.section {
+    padding: 80px 20px;
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #38bdf8;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Skills */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-tag {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* Projects */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    padding: 30px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #38bdf8;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #f1f5f9;
+}
+
+.card h4 {
+    color: #94a3b8;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tech-stack {
+    margin-top: 20px;
+}
+
+.tech-stack small {
+    background: #0f172a;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 0.75rem;
+}
+
+/* Contact Form */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #334155;
+    background: rgba(15, 23, 42, 0.8);
+    color: #fff;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #38bdf8;
+}
+
+#contact button {
+    background: #38bdf8;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    color: #0f172a;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #64748b;
+}
+
+
+.hire-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    background: transparent;
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+    border-radius: 5px;
+    text-decoration: none; /* Removes underline */
+    font-weight: 600;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.hire-btn:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+    transform: translateY(-2px);
+}
+
+
+
+
+/* Import main styles first if you want to combine, otherwise link both in HTML */
+
+/* --- Layout Specifics --- */
+.about-page {
+    padding-top: 120px; /* Space for fixed header */
+    padding-bottom: 50px;
+}
+
+/* --- Profile & Terminal Section --- */
+.bio-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+/* Profile Image with Neon Glow */
+.profile-img-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #38bdf8;
+    position: relative;
+    z-index: 2;
+}
+
+.glow-ring {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #38bdf8, #0f172a);
+    z-index: 1;
+    filter: blur(15px);
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Terminal Window Styling */
+.terminal-window {
+    background: #1e293b;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    font-family: 'Fira Code', monospace; /* Monospaced font for code look */
+}
+
+.terminal-header {
+    background: #0f172a;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.title {
+    margin-left: auto;
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+
+.terminal-body {
+    padding: 20px;
+    color: #e2e8f0;
+}
+
+.prompt { color: #27c93f; margin-right: 10px; }
+.cmd { color: #38bdf8; }
+.output { margin-bottom: 15px; line-height: 1.6; color: #cbd5e1; }
+
+
+/* --- Timeline Section --- */
+.education-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* The vertical line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #334155;
+    top: 0;
+    bottom: 0;
+    left: 20px; /* Adjust for mobile alignment */
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* The dots on the line */
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #38bdf8;
+    border: 4px solid #0f172a;
+    position: absolute;
+    left: 11px;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    position: relative;
+}
+
+.timeline-content h3 { color: #fff; margin-bottom: 5px; }
+.timeline-content h4 { color: #38bdf8; margin-bottom: 10px; font-weight: 400; }
+.timeline-content .date { 
+    display: inline-block; 
+    background: #334155; 
+    padding: 4px 10px; 
+    border-radius: 4px; 
+    font-size: 0.85rem; 
+    margin-bottom: 15px; 
+}
+.timeline-content ul { padding-left: 20px; margin-top: 10px; color: #94a3b8; }
+
+/* Desktop View Adjustment */
+@media screen and (min-width: 768px) {
+    .timeline::after { left: 50%; }
+    .timeline-item { width: 50%; }
+    .timeline-item:nth-child(even) { left: 50%; }
+    .timeline-item:nth-child(odd) { left: 0; }
+    
+    .timeline-item:nth-child(even) .timeline-dot { left: -10px; }
+    .timeline-item:nth-child(odd) .timeline-dot { left: auto; right: -10px; }
+    
+    .timeline-item:nth-child(odd) { text-align: right; padding-right: 40px; padding-left: 0;}
+    .timeline-item:nth-child(even) { padding-left: 40px; }
+
+    .timeline-item:nth-child(odd) .timeline-content ul {
+        display: inline-block;
+        text-align: right;
+        padding-left: 0;
+        padding-right: 20px;
+        direction: rtl; /* Trick to align bullets to the right text */
+    }
+}
