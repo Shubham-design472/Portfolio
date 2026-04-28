@@ -47,3 +47,29 @@ window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
+
+
+function submitForm(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    const result = document.getElementById("contact-result");
+
+    result.innerText = "⏳ Sending message...";
+
+    emailjs.send("service_s9ttjkq", "template_l0ftx7j", {
+        from_name: name,
+        from_email: email,
+        message: message
+    })
+    .then(function () {
+        result.innerText = "✅ Message sent successfully!";
+        event.target.reset();
+    })
+    .catch(function (error) {
+        console.error(error);
+        result.innerText = "❌ Failed to send message. Try again.";
+    });
+}
