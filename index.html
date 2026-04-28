@@ -190,14 +190,23 @@
 
     <section id="contact" class="section glass-card">
         <h2>Contact Me</h2>
-        <form onsubmit="submitForm(event)">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" rows="4"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <p id="contact-result"></p>
+       <form onsubmit="submitForm(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" rows="4"></textarea>
+    <button type="submit">Send Message</button>
+       </form>
+      <p id="contact-result"></p>
     </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("YOUR_PUBLIC_KEY"); // replace this
+})();
+</script>
 
     <footer>
         <p>© 2025 Shubham Pal | Built with Code</p>
