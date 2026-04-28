@@ -59,7 +59,7 @@ function submitForm(event) {
 
     result.innerText = "⏳ Sending message...";
 
-    emailjs.send("service_s9ttjkq", "template_l0ftx7j", {
+    emailjs.send("service_s9ttjkq", "template_ekeak15", {
         from_name: name,
         from_email: email,
         message: message
