@@ -68,8 +68,9 @@ function submitForm(event) {
         result.innerText = "✅ Message sent successfully!";
         event.target.reset();
     })
-    .catch(function (error) {
-        console.error("FULL ERROR:", error);
-        result.innerText = "❌ Failed to send message.";
-    });
+   .catch(function (error) {
+    console.error("FULL ERROR:", error);
+    alert(JSON.stringify(error));
+    result.innerText = "❌ Failed to send message.";
+});
 }
