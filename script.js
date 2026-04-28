@@ -69,8 +69,8 @@ function submitForm(event) {
         event.target.reset();
     })
    .catch(function (error) {
-    console.error("FULL ERROR:", error);
-    alert(JSON.stringify(error));
-    result.innerText = "❌ Failed to send message.";
+    console.log("STATUS:", error.status);
+    console.log("TEXT:", error.text);
+    alert(error.text);
 });
 }
